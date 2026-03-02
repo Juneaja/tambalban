@@ -264,7 +264,13 @@
 <div id="splash-screen">
     <div class="loader">Loading...</div>
 </div>
-
+window.addEventListener('load', function() {
+    const splash = document.getElementById('splash-screen');
+    // Menghilangkan splash setelah 3 detik (3000ms)
+    setTimeout(() => {
+        splash.classList.add('hidden');
+    }, 3000);
+});
     <!-- Navbar -->
     <header>
         <div class="logo">Tambal<span>Ban</span>Online<p><span>Lamongan</span></p></div>
@@ -309,7 +315,7 @@
     <!-- Booking Form Section -->
     <div class="container" id="booking">
         <div class="section-title">
-            <h2>Booking Sekarang</h2>
+            <h2>Kirim Pesan Sekarang</h2>
             <p>Isi formulir di bawah, kami akan menghubungi Anda via WhatsApp.</p>
         </div>
 
@@ -332,7 +338,7 @@
 
                 <div class="form-group">
                     <label for="lokasi">Lokasi Saat Ini (Alamat)</label>
-                    <textarea id="lokasi" rows="3" placeholder="Jl. Sudirman No. 123, Jakarta Selatan" required></textarea>
+                    <textarea id="lokasi" rows="3" placeholder="Jl. Laras liris lamongan" required></textarea>
                 </div>
 
                 <div class="form-group">
@@ -351,14 +357,6 @@
     <a href="https://wa.me/6289602337878" class="float-wa" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-    
-window.addEventListener('load', function() {
-    const splash = document.getElementById('splash-screen');
-    // Menghilangkan splash setelah 3 detik (3000ms)
-    setTimeout(() => {
-        splash.classList.add('hidden');
-    }, 3000);
-});
 
     <!-- Footer -->
     <footer>
@@ -366,6 +364,7 @@ window.addEventListener('load', function() {
     </footer>
 
     <!-- JavaScript Logic -->
+    
     <script>
         document.getElementById('waForm').addEventListener('submit', function(e) {
             e.preventDefault(); // Mencegah submit form secara default
