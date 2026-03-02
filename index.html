@@ -238,9 +238,32 @@
             .hero h1 { font-size: 1.8rem; }
             .booking-section { padding: 1.5rem; }
         }
+        #splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Warna background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Pastikan di depan */
+    transition: opacity 0.5s ease;
+}
+
+/* Class untuk animasi sembunyi */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
     </style>
 </head>
 <body>
+<div id="splash-screen">
+    <div class="loader">Loading...</div>
+</div>
 
     <!-- Navbar -->
     <header>
@@ -328,6 +351,14 @@
     <a href="https://wa.me/6289602337878" class="float-wa" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+    
+window.addEventListener('load', function() {
+    const splash = document.getElementById('splash-screen');
+    // Menghilangkan splash setelah 3 detik (3000ms)
+    setTimeout(() => {
+        splash.classList.add('hidden');
+    }, 3000);
+});
 
     <!-- Footer -->
     <footer>
